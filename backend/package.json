@@ -1,0 +1,33 @@
+{
+  "name": "physical-ai-course-backend",
+  "version": "1.0.0",
+  "description": "Backend for the Physical AI & Humanoid Robotics Course RAG Chatbot",
+  "main": "src/main.py",
+  "scripts": {
+    "start": "uvicorn src.main:app --reload --port 8000",
+    "dev": "uvicorn src.main:app --reload --port 8000",
+    "install": "pip install -r requirements.txt"
+  },
+  "keywords": [
+    "ai",
+    "robotics",
+    "education",
+    "rag",
+    "course"
+  ],
+  "author": "Physical AI Course Team",
+  "license": "MIT",
+  "dependencies": {
+    "fastapi": "^0.104.1",
+    "uvicorn": "^0.24.0",
+    "openai": "^1.3.5",
+    "qdrant-client": "^1.7.0",
+    "python-dotenv": "^1.0.0",
+    "torch": "^2.1.1",
+    "transformers": "^4.35.2",
+    "sentence-transformers": "^2.2.2",
+    "asyncio": "^3.4.3",
+    "pydantic": "^2.5.0",
+    "python-multipart": "^0.0.6"
+  }
+}

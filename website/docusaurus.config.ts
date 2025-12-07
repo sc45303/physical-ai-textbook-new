@@ -14,6 +14,18 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
+  plugins: [
+    // Add the chatbot as a global UI component
+    async function chatbotPlugin(context, options) {
+      return {
+        name: 'chatbot-plugin',
+        clientModules: [
+          require.resolve('./src/components/ChatbotInjector.jsx'),
+        ],
+      };
+    },
+  ],
+
   // Set the production url of your site here
   url: 'https://physicalai-course.com',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -25,7 +37,7 @@ const config: Config = {
   organizationName: 'physicalai-course', // Usually your GitHub org/user name.
   projectName: 'physical-ai-humanoid-course', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

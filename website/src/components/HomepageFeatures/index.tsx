@@ -5,49 +5,73 @@ import styles from "./styles.module.css";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  image: string;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "Physical AI & Humanoid Robotics",
+    image: "img/download.png",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        We&apos;ve been working on physical AI and humanoid robotics for over a
+        decade. Our expertise lies in creating lifelike robots that can interact
+        seamlessly with humans.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: "The Robotic Nervous System",
+    image: "img/nervious.png",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory
-        directoryv.
+        Our proprietary Robotic Nervous System (RNS) integrates advanced AI
+        algorithms with cutting-edge hardware to deliver unparalleled
+        performance in robotics applications.
       </>
     ),
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "Gazebo & Unity - The Digital Twin",
+    image: "img/twin.png",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        We utilize Gazebo and Unity to create digital twins of our robotic
+        systems, allowing for precise simulations and testing in virtual
+        environments before deployment in the real world.
+      </>
+    ),
+  },
+  {
+    title: "NVIDIA Isaac - The AI-Robot Brain",
+    image: "img/robot.png",
+    description: (
+      <>
+        Leveraging NVIDIA Isaac, we develop intelligent robotic brains that
+        enable autonomous decision-making and learning capabilities in our
+        humanoid robots.
+      </>
+    ),
+  },
+  {
+    title: "Vision-Language-Action (VLA) - The Complete System",
+    image: "img/vla.png",
+    description: (
+      <>
+        Our Vision-Language-Action (VLA) framework combines visual perception,
+        natural language understanding, and action execution to create robots
+        that can comprehend and respond to complex human instructions.
       </>
     ),
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+function Feature({ title, image, description }: FeatureItem) {
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={image} className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>

@@ -16,15 +16,17 @@ class VectorStore:
         # Initialize sentence transformer model for embeddings
         self.encoder = SentenceTransformer('all-MiniLM-L6-v2')
         
-        # Initialize Qdrant client 
+        # Initialize Qdrant client in memory mode by default
         # In production, use proper credentials and hosted cluster
         try:
+            # Try to use in-memory mode by default for local development
+            self.client = QdrantClient(":memory:")
+        except Exception as e:
+            logger.warning(f"Failed to initialize in-memory Qdrant client: {e}")
+            # Fallback to local instance if needed
             self.client = QdrantClient(
                 url="http://localhost:6333"  # Default Qdrant URL
             )
-        except:
-            # If local Qdrant is not available, try using in-memory mode
-            self.client = QdrantClient(":memory:")
         
         self.collection_name = collection_name
         self.vector_size = 384  # Size of all-MiniLM-L6-v2 embeddings
@@ -69,7 +71,8 @@ class VectorStore:
         
         # This would normally read from the actual course files
         # For now, I'll create a function to process the actual content
-        await self.load_and_index_documentation()
+        from src.doc_processor import initialize_with_documentation
+        await initialize_with_documentation(self)
         logger.info("Course content indexed successfully")
 
     async def load_and_index_documentation(self):

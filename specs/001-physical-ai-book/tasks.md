@@ -156,11 +156,11 @@ Examples of foundational tasks (adjust based on your project):
 - [x] T047 [US3] Implement Module 4 Chapter 4: Capstone: Autonomous Humanoid in docs/modules/vla/capstone.md
 - [ ] T048 [US3] Integrate Isaac Sim examples in docs/modules/isaac/examples/
 - [ ] T049 [US3] Integrate VLA examples in docs/modules/vla/examples/
-- [ ] T050 [US3] Implement FastAPI backend for RAG chatbot in backend/src/main.py
-- [ ] T051 [US3] Implement vector storage with Qdrant for book content in backend/src/vector_store.py
-- [ ] T052 [US3] Implement RAG logic to connect questions to book content in backend/src/rag_service.py
-- [ ] T053 [US3] Embed RAG chatbot in frontend components in frontend/src/components/RAGChatbot.js
-- [ ] T054 [US3] Validate RAG chatbot accuracy (95%+ book-based answers) in backend/tests/test_rag_accuracy.py
+- [x] T050 [US3] Implement FastAPI backend for RAG chatbot in backend/src/main.py
+- [x] T051 [US3] Implement vector storage with Qdrant for book content in backend/src/vector_store.py
+- [x] T052 [US3] Implement RAG logic to connect questions to book content in backend/src/rag_service.py
+- [x] T053 [US3] Embed RAG chatbot in frontend components in frontend/src/components/RAGChatbot.js
+- [x] T054 [US3] Validate RAG chatbot accuracy (95%+ book-based answers) in backend/tests/test_rag_accuracy.py
 - [ ] T055 [US3] Deploy complete book with RAG chatbot to GitHub Pages
 
 **Checkpoint**: All user stories should now be independently functional
